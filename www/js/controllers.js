@@ -1,6 +1,9 @@
 angular.module('starter.controllers', [])
 
-.controller('DashCtrl', function($scope) {})
+.controller('DashCtrl', function($scope) {
+    window.ga.trackView('Dash');
+    window.ga.trackEvent('Page', 'Start', 'Dash');
+})
 
 .controller('ChatsCtrl', function($scope, Chats) {
   // With the new view caching in Ionic, Controllers are only called
@@ -11,6 +14,9 @@ angular.module('starter.controllers', [])
   //$scope.$on('$ionicView.enter', function(e) {
   //});
 
+  window.ga.trackView('Chats');
+  window.ga.trackEvent('Page', 'Start', 'Chat');
+
   $scope.chats = Chats.all();
   $scope.remove = function(chat) {
     Chats.remove(chat);
@@ -18,10 +24,14 @@ angular.module('starter.controllers', [])
 })
 
 .controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
+  window.ga.trackView('ChatDetail');
+  window.ga.trackEvent('Page', 'Start', 'ChatDetail');
   $scope.chat = Chats.get($stateParams.chatId);
 })
 
 .controller('AccountCtrl', function($scope) {
+  window.ga.trackView('Account');
+  window.ga.trackEvent('Page', 'Start', 'Account');
   $scope.settings = {
     enableFriends: true
   };
