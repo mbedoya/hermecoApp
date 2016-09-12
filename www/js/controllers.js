@@ -5,7 +5,7 @@ angular.module('starter.controllers', [])
     window.ga.trackEvent('Page', 'Start', 'Dash');
 })
 
-.controller('ChatsCtrl', function($scope, Chats) {
+.controller('ChatsCtrl', function($scope, $rootScope, Chats) {
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
   // To listen for when this page is active (for example, to refresh data),
@@ -16,6 +16,8 @@ angular.module('starter.controllers', [])
 
   window.ga.trackView('Chats');
   window.ga.trackEvent('Page', 'Start', 'Chat');
+
+  $rootScope.gaPlugin.trackPage( function(){}, function(){}, "Chat Page");
 
   $scope.chats = Chats.all();
   $scope.remove = function(chat) {

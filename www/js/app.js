@@ -7,7 +7,7 @@
 // 'starter.controllers' is found in controllers.js
 angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
-  .run(function ($ionicPlatform) {
+  .run(function ($ionicPlatform, $rootScope) {
     $ionicPlatform.ready(function () {
       // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
       // for form inputs)
@@ -23,9 +23,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
       //Evento que se dispara cuando el dispositivo está listo
       document.addEventListener('deviceready', function () {
-        window.ga.startTrackerWithId('UA-83291592-1');
+
+        var gaCode = 'UA-83291592-1';
+
+        window.ga.startTrackerWithId(gaCode);
         window.ga.trackView('Start Page');
         window.ga.trackEvent('Page', 'Start', 'Ready');
+
+        $rootScope.gaPlugin = window.plugins.gaPlugin;
+        $rootScope.gaPlugin.init(successHandler, errorHandler, gaCode, 10);
+
       });
 
     });
