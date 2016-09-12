@@ -21,6 +21,7 @@ xmlns:gap = "http://phonegap.com/ns/1.0" >
     <param name="ios-package" value="CDVStatusBar" onload="true"/>
   </feature>
 
+  <gap:plugin name="com.adobe.plugins.gaplugin" />
   <gap:plugin name="cordova-plugin-google-analytics" source="npm" />
 
 </widget>
