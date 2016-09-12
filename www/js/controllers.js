@@ -14,8 +14,10 @@ angular.module('starter.controllers', [])
   //$scope.$on('$ionicView.enter', function(e) {
   //});
 
+  /*
   window.ga.trackView('Chats');
   window.ga.trackEvent('Page', 'Start', 'Chat');
+  */
 
   $rootScope.gaPlugin.trackPage( function(){}, function(){}, "Chat Page");
 

@@ -26,9 +26,10 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
         var gaCode = 'UA-83291592-1';
 
+        /*
         window.ga.startTrackerWithId(gaCode);
         window.ga.trackView('Start Page');
-        window.ga.trackEvent('Page', 'Start', 'Ready');
+        window.ga.trackEvent('Page', 'Start', 'Ready');*/
 
         $rootScope.gaPlugin = window.plugins.gaPlugin;
         $rootScope.gaPlugin.init(successHandler, errorHandler, gaCode, 10);
