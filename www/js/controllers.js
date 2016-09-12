@@ -19,7 +19,9 @@ angular.module('starter.controllers', [])
   window.ga.trackEvent('Page', 'Start', 'Chat');
   */
 
-  $rootScope.gaPlugin.trackPage( function(){}, function(){}, "Chat Page");
+  $scope.$on('$ionicView.enter', function(e) {
+      $rootScope.gaPlugin.trackPage( function(){}, function(){}, "Chat Page");
+  });
 
   $scope.chats = Chats.all();
   $scope.remove = function(chat) {
@@ -34,8 +36,9 @@ angular.module('starter.controllers', [])
 })
 
 .controller('AccountCtrl', function($scope) {
-  window.ga.trackView('Account');
-  window.ga.trackEvent('Page', 'Start', 'Account');
+  $scope.$on('$ionicView.enter', function(e) {
+      $rootScope.gaPlugin.trackPage( function(){}, function(){}, "Account Page");
+  });
   $scope.settings = {
     enableFriends: true
   };
