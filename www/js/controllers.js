@@ -54,7 +54,7 @@ angular.module('starter.controllers', [])
       },
         {
           destinationType: Camera.DestinationType.FILE_URI,
-          sourceType: Camera.PictureSourceType.PHOTOLIBRARY
+          sourceType: Camera.PictureSourceType.CAMERA
         }
       );
 
