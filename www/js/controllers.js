@@ -47,7 +47,7 @@ angular.module('starter.controllers', [])
     $scope.tomarFoto1 = function () {
 
       navigator.camera.getPicture(function success(uri) {
-        console.log("success");
+        $scope.img1 = uri;
       }, function error(err) {
         console.log(err);
 
@@ -67,6 +67,7 @@ angular.module('starter.controllers', [])
         function (results) {
           for (var i = 0; i < results.length; i++) {
             console.log('Image URI: ' + results[i]);
+            $scope.img2 = results[i];
           }
         }, function (error) {
           console.log('Error: ' + error);

@@ -5,11 +5,17 @@
         Enable Friends
       </ion-toggle>
     </ion-list>
-    <button class="button" ng-click="tomarFoto1()">
+    <div>
+      <button class="button" ng-click="tomarFoto1()">
       Foto 1
     </button>
-    <button class="button" ng-click="tomarFoto2()">
+    {{ img1 }}
+    </div>
+    <div>
+      <button class="button" ng-click="tomarFoto2()">
       Foto 2
     </button>
+    {{ img2 }}
+    </div>
   </ion-content>
 </ion-view>
