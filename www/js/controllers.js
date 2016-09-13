@@ -58,12 +58,12 @@ angular.module('starter.controllers', [])
         }
       );
 
-      
+
     }
 
     $scope.tomarFoto2 = function () {
 
-      window.imagePicker.getPictures(
+      plugins.imagePicker.getPictures(
         function (results) {
           for (var i = 0; i < results.length; i++) {
             console.log('Image URI: ' + results[i]);
