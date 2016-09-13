@@ -25,10 +25,14 @@ xmlns:gap = "http://phonegap.com/ns/1.0" >
   <gap:plugin name="com.adobe.plugins.gaplugin" />
   <gap:plugin name="cordova-plugin-camera" source="npm" />
 
-  <feature name="http://api.phonegap.com/1.0/camera"/>
-<feature name="http://api.phonegap.com/1.0/device"/>
-<feature name="http://api.phonegap.com/1.0/file"/>
-<feature name="http://api.phonegap.com/1.0/network"/>
+  <feature name="http://api.phonegap.com/1.0/battery"/>
+    <feature name="http://api.phonegap.com/1.0/camera"/>
+    <feature name="http://api.phonegap.com/1.0/contacts"/>
+    <feature name="http://api.phonegap.com/1.0/file"/>
+    <feature name="http://api.phonegap.com/1.0/geolocation"/>
+    <feature name="http://api.phonegap.com/1.0/media"/>
+    <feature name="http://api.phonegap.com/1.0/network"/>
+    <feature name="http://api.phonegap.com/1.0/notification"/>
   
   <!-- <gap:plugin name="cordova-plugin-google-analytics" source="npm" /> -->
 
