@@ -44,17 +44,34 @@ angular.module('starter.controllers', [])
     $scope.settings = {
       enableFriends: true
     };
-    $scope.tomarFoto = function () {
+    $scope.tomarFoto1 = function () {
+
       navigator.camera.getPicture(function success(uri) {
         console.log("success");
       }, function error(err) {
         console.log(err);
 
-      }, 
-      {
-        destinationType: Camera.DestinationType.FILE_URI,
-        sourceType: Camera.PictureSourceType.PHOTOLIBRARY
-      }
+      },
+        {
+          destinationType: Camera.DestinationType.FILE_URI,
+          sourceType: Camera.PictureSourceType.PHOTOLIBRARY
+        }
       );
+
+      
+    }
+
+    $scope.tomarFoto2 = function () {
+
+      window.imagePicker.getPictures(
+        function (results) {
+          for (var i = 0; i < results.length; i++) {
+            console.log('Image URI: ' + results[i]);
+          }
+        }, function (error) {
+          console.log('Error: ' + error);
+        }
+      );
+
     }
   });
