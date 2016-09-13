@@ -48,6 +48,7 @@ angular.module('starter.controllers', [])
 
       navigator.camera.getPicture(function success(uri) {
         $scope.img1 = uri;
+        $scope.$apply();
       }, function error(err) {
         console.log(err);
 
@@ -68,6 +69,7 @@ angular.module('starter.controllers', [])
           for (var i = 0; i < results.length; i++) {
             console.log('Image URI: ' + results[i]);
             $scope.img2 = results[i];
+            $scope.$apply();
           }
         }, function (error) {
           console.log('Error: ' + error);
