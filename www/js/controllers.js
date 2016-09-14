@@ -103,8 +103,13 @@ angular.module('starter.controllers', [])
 
           filePath = $scope.img2;
           $scope.getFileContentAsBase64(filePath, function(base64Image){
+            /*
             var image = document.getElementById('myImage');
             image.src = "data:image/jpeg;base64," + base64Image;
+            */
+
+            $scope.base64 = "data:image/jpeg;base64," + base64Image;
+            $scope.$apply();
           });
 
         },function (error) {
