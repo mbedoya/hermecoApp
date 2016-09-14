@@ -37,7 +37,7 @@ angular.module('starter.controllers', [])
     $scope.chat = Chats.get($stateParams.chatId);
   })
 
-  .controller('AccountCtrl', function ($scope, $rootScope) {
+  .controller('AccountCtrl', function ($scope, $rootScope, $ionicLoading) {
 
     $scope.$on('$ionicView.enter', function (e) {
       $rootScope.gaPlugin.trackPage(function () { }, function () { }, "Account Page");
@@ -93,6 +93,10 @@ angular.module('starter.controllers', [])
 
         function (results) {
 
+          $ionicLoading.show({
+            template: 'Loading...'
+          });
+
           var filePath = "";
 
           for (var i = 0; i < results.length; i++) {
@@ -108,8 +112,10 @@ angular.module('starter.controllers', [])
             image.src = "data:image/jpeg;base64," + base64Image;
             */
 
-            $scope.base64 = "data:image/jpeg;base64," + base64Image;
+            $scope.base64 = base64Image;
             $scope.$apply();
+
+            $ionicLoading.hide();
           });
 
         },function (error) {
